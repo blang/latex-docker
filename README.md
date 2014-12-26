@@ -20,3 +20,14 @@ docker build -t blang/latex .
 
 ```
 
+Compile example:
+```bash
+cd example
+
+# Double to process refs
+../dockercmd.sh pdflatex example.tex
+../dockercmd.sh pdflatex example.tex
+
+# View
+./example.pdf
+```
