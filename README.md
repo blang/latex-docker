@@ -3,14 +3,14 @@ Latex docker container
 
 This container helps compiling latex sources without the need to install all latex packages on your system.
 
-Usage
+Setup
 -----
 First, add your local user to docker group:
 ```bash
 sudo usermod -aG docker YOURUSERNAME
 ```
 
-Pull image:
+Pull image ([from Hub](https://registry.hub.docker.com/u/blang/latex)):
 ```bash
 docker pull blang/latex
 ```
@@ -20,7 +20,9 @@ docker build -t blang/latex .
 
 ```
 
-Compile example:
+Usage:
+-----
+
 ```bash
 cd example
 
@@ -31,3 +33,12 @@ cd example
 # View
 ./example.pdf
 ```
+Use `dockercmd.sh` to execute any command you like inside the container. `WORKDIRs` match, mounted to `/data` inside container.
+
+Why should I use this container?
+-----
+
+- Easy setup
+- Preserves UID and GID of local user
+- Use container like local command
+- `texlive-full` covers most of the available packages
