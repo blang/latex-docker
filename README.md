@@ -30,6 +30,9 @@ cd example
 ../dockercmd.sh pdflatex example.tex
 ../dockercmd.sh pdflatex example.tex
 
+# Or better in one go (does not start container twice)
+../dockercmd.sh /bin/sh -c "pdflatex example.tex && pdflatex example.tex"
+
 # View
 ./example.pdf
 ```
