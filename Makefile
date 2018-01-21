@@ -1,26 +1,18 @@
 NS = blang
-REPO = latex 
-NAME = latex 
-VOLUMES = -v $PWD:/data
+REPO = latex
+IMAGE = $(NS)/$(REPO)
 
-.PHONY: build shell run start stop stoprm rm
+.PHONY: build build_ubuntu build_basic build_full
 
-build:
-	docker build -t $(NS)/$(REPO) .
+build: build_ubuntu build_basic build_full
 
-shell:
-	docker run --rm --name $(NAME) -i -t $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO) /bin/bash
+build_ubuntu: Dockerfile.ubuntu
+	@docker build -f Dockerfile.ubuntu -t $(IMAGE):ubuntu .
 
-run:
-	docker run --rm --name $(NAME) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO)
+build_basic: Dockerfile.basic
+	@docker build -f Dockerfile.basic -t $(IMAGE):ctanbasic .
 
-start:
-	docker run -d --name $(NAME) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO)
-
-stop:
-	docker stop $(NAME)
-
-rm:
-	docker rm $(NAME)
+build_full: build_basic Dockerfile.full
+	@docker build -f Dockerfile.full -t $(IMAGE):ctanfull .
 
 default: build
