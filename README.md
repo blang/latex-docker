@@ -35,7 +35,7 @@ Compile latex sources using docker:
 cd my_latex_project
 
 # Download the command wrapper and make it executable
-wget https://raw.githubusercontent.com/blang/latex-docker/master/dockercmd.sh
+wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
 chmod +x dockercmd.sh
 
 # Optional: Change the version (see above, default blang/latex:ubuntu)
