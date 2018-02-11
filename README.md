@@ -20,9 +20,9 @@ All versions are based on Ubuntu: ([See all tags](https://hub.docker.com/r/blang
 - [blang/latex:ctanfull - Dockerfile.full](Dockerfile.full) CTAN TexLive Scheme-full: Up-to-date, all packages (5.6GB)
 
 If you need...
-- ...the most-stuff-works-out-of-the-box package, try `blang/latex:ubuntu`. 
+- ...the most-stuff-works-out-of-the-box package, try `blang/latex:ubuntu`.
 - ...the most recent version of everything, try `blang/latex:ctanfull`.
-- ...a stable base for your custom texlive build, try `blang/latex:ctanbasic`
+- ...a stable base for your custom texlive build, try `blang/latex:ctanbasic`.
 
 For stability, choose a more specific version tag ([See all tags](https://hub.docker.com/r/blang/latex/))
 
